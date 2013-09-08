@@ -1,12 +1,12 @@
 <h1>Events</h1>
 <section class="search">
-<input ng-model="query"/>
-<div id="status">filter: {{ query }}</div>
+  <input ng-model="query"/>
+  <div id="status">filter: {{ query }}</div>
 </section>
 
 <section class="event" ng-repeat="event in calendarEvents | filter:query">
-<h1>{{ event.title }}</h1>
-<h2>{{ event.when | date:'fullDate' }}</h2>
-<h2>{{ event.location }}</h2>
-<p ng-bind-html="event.description | markdown"></p>
+  <h1>{{ event.title.$t }}</h1>
+  <h2>{{ event.gd$when[0].startTime | date:'fullDate' }}</h2>
+  <h2>{{ event.gd$where[0].valueString }}</h2>
+  <p ng-bind-html="event.content.$t | markdown"></p>
 </section>
