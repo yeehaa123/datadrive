@@ -9,7 +9,7 @@ describe 'Data Drive App', ->
     it "should filter the list of events", ->
       expect(repeater('.event').count()).toBe 3
       
-      input('query').enter('kick')
+      input('query').enter('data')
       expect(repeater('.event').count()).toBe 1
 
       input('query').enter('test')
