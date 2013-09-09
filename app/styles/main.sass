@@ -26,6 +26,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png"
 $font-family-sans-serif:  "Abel", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 @import bootstrap-sass/lib/bootstrap
+@import "compass"
 @import url(http://fonts.googleapis.com/css?family=Abel|Codystar)
 
 /* Put your CSS here
@@ -45,3 +46,8 @@ body
 
   h3
     color: $cyan
+
+.event-details
+  p
+    +adjust-font-size-to(14px)
+    +adjust-leading-to(1, 14px)

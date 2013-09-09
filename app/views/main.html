@@ -23,8 +23,10 @@
 
 <section class="event well" ng-repeat="event in calendarEvents | filter:query">
   <h1>{{ event.title }}</h1>
-  <p><strong>Date:</strong> {{ event.startTime | date:'fullDate' }}</p>
-  <p><strong>Time:</strong> {{ event.startTime | date:'shortTime'}} - {{ event.endTime | date:'shortTime'}}</p>
+  <section class="event-details">
+    <p><strong>Date:</strong> {{ event.startTime | date:'fullDate' }}</p>
+    <p><strong>Time:</strong> {{ event.startTime | date:'shortTime'}} - {{ event.endTime | date:'shortTime'}}</p>
     <p><strong>Location:</strong> {{ event.location }}</p>
+  </section>
   <p ng-bind-html="event.description | markdown"></p>
 </section>
