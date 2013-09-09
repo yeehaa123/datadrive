@@ -17,11 +17,14 @@
     </form> 
   </div>
 </nav>
+<hgroup class="page-header">
+  <h1>Upcoming Events</h1>
+</hgroup>
 
-<section class="event" ng-repeat="event in calendarEvents | filter:query">
+<section class="event well" ng-repeat="event in calendarEvents | filter:query">
+  <p><strong>Date:</strong> {{ event.startTime | date:'fullDate' }}</p>
+  <p><strong>Time:</strong> {{ event.startTime | date:'shortTime'}} - {{ event.endTime | date:'shortTime'}}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
   <h1>{{ event.title }}</h1>
-  <h2>{{ event.startTime | date:'fullDate' }}</h2>
-  <h3>{{ event.startTime | date:'shortTime'}} - {{ event.endTime | date:'shortTime'}}</h3>
-  <h2>{{ event.location }}</h2>
   <p ng-bind-html="event.description | markdown"></p>
 </section>
